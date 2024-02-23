@@ -1,4 +1,6 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-createRoot(document.getElementById('root')!).render(<StrictMode></StrictMode>);
+const rootEl = document.querySelector('#root');
+
+if (rootEl) createRoot(rootEl).render(<StrictMode />);

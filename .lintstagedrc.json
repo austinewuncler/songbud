@@ -1,1 +1,6 @@
-{ "*": "prettier --write --ignore-unknown" }
+{
+  "*": [
+    "eslint --fix --max-warnings=0 --report-unused-disable-directives --no-warn-ignored",
+    "prettier --write --ignore-unknown"
+  ]
+}
