@@ -8,4 +8,5 @@ export default {
   ],
   darkMode: 'class',
   plugins: [nextui()],
+  theme: { fontFamily: { sans: ['Anta', 'sans-serif'] } },
 } satisfies Config;

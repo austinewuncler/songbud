@@ -1,5 +1,6 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router';
 import React, { Suspense, lazy } from 'react';
+import Header from '~/components/Header';
 
 const TanStackRouterDevtools =
   import.meta.env.PROD ?
@@ -12,6 +13,7 @@ const TanStackRouterDevtools =
 
 const Root = () => (
   <>
+    <Header />
     <Outlet />
     <Suspense>
       <TanStackRouterDevtools />

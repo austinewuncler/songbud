@@ -43,6 +43,7 @@ export default tsEslint.config(
     },
     rules: {
       ...reactAllConfig.rules,
+      'react/forbid-component-props': 'off',
       'react/function-component-definition': [
         'error',
         { namedComponents: 'arrow-function' },
@@ -60,6 +61,10 @@ export default tsEslint.config(
     ...unicornAllConfig,
     rules: {
       ...unicornAllConfig.rules,
+      'unicorn/filename-case': [
+        'error',
+        { cases: { camelCase: true, pascalCase: true } },
+      ],
       'unicorn/no-null': 'off',
       'unicorn/prevent-abbreviations': [
         'error',
