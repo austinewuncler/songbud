@@ -16,11 +16,13 @@ const unicornAllConfig = unicornConfigs['flat/all'];
 const compat = new FlatCompat();
 
 export default tsEslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'src/routeTree.gen.ts'] },
   {
     ...eslintAllConfig,
     rules: {
       ...eslintAllConfig.rules,
+      'new-cap': ['error', { capIsNew: false }],
+      'no-ternary': 'off',
       'one-var': ['error', 'never'],
       'sort-imports': 'off',
       'sort-keys': 'off',
@@ -41,6 +43,10 @@ export default tsEslint.config(
     },
     rules: {
       ...reactAllConfig.rules,
+      'react/function-component-definition': [
+        'error',
+        { namedComponents: 'arrow-function' },
+      ],
       'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
       'react/jsx-no-literals': 'off',
     },
@@ -54,7 +60,11 @@ export default tsEslint.config(
     ...unicornAllConfig,
     rules: {
       ...unicornAllConfig.rules,
-      'unicorn/prevent-abbreviations': ['error', { allowList: { El: true } }],
+      'unicorn/no-null': 'off',
+      'unicorn/prevent-abbreviations': [
+        'error',
+        { allowList: { El: true, res: true } },
+      ],
     },
   },
   arrayFuncPlugin.configs.all,

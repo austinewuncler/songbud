@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
+    "@tanstack/react-router": "^1.16.6",
+    "@tanstack/router-devtools": "^1.16.6",
     "framer-motion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -19,6 +21,7 @@
     "@commitlint/config-conventional": "^18.6.2",
     "@eslint/eslintrc": "^3.0.1",
     "@eslint/js": "^8.56.0",
+    "@tanstack/router-vite-plugin": "^1.16.5",
     "@tsconfig/strictest": "^2.0.3",
     "@tsconfig/vite-react": "^3.0.0",
     "@types/node": "^20.11.20",
