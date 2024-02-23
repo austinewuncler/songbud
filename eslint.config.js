@@ -22,7 +22,10 @@ export default tsEslint.config(
     rules: {
       ...eslintAllConfig.rules,
       'new-cap': ['error', { capIsNew: false }],
+      'no-console': ['error', { allow: ['error'] }],
+      'no-magic-numbers': 'off',
       'no-ternary': 'off',
+      'no-void': ['error', { allowAsStatement: true }],
       'one-var': ['error', 'never'],
       'sort-imports': 'off',
       'sort-keys': 'off',
@@ -49,6 +52,7 @@ export default tsEslint.config(
         { namedComponents: 'arrow-function' },
       ],
       'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
+      'react/jsx-no-bind': ['error', { allowArrowFunctions: true }],
       'react/jsx-no-literals': 'off',
     },
     settings: { react: { version: 'detect' } },
@@ -68,7 +72,7 @@ export default tsEslint.config(
       'unicorn/no-null': 'off',
       'unicorn/prevent-abbreviations': [
         'error',
-        { allowList: { El: true, res: true } },
+        { allowList: { El: true, env: true, res: true } },
       ],
     },
   },
@@ -83,6 +87,7 @@ export default tsEslint.config(
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/strict',
     'plugin:tailwindcss/recommended',
+    'plugin:@tanstack/eslint-plugin-query/recommended',
   ),
   {
     ...perfectionistNaturalConfig,
