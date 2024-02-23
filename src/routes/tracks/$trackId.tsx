@@ -1,8 +1,15 @@
+import { queryOptions } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router';
-import React from 'react';
-
-const Track = () => <div>Track</div>;
+import { tracks } from '~/spotify/api';
 
 export const Route = createFileRoute('/tracks/$trackId')({
-  component: Track,
+  beforeLoad: ({ params: { trackId } }) => ({
+    trackQueryOptions: queryOptions({
+      queryFn: () => tracks.get(trackId),
+      queryKey: ['track', trackId],
+    }),
+  }),
+
+  loader: ({ context: { queryClient, trackQueryOptions } }) =>
+    queryClient.ensureQueryData(trackQueryOptions),
 });

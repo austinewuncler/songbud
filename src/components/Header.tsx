@@ -10,8 +10,8 @@ import React from 'react';
 import SearchBar from './SearchBar';
 
 const Header = () => (
-  <Navbar isBordered maxWidth="full">
-    <NavbarContent as="div" justify="start">
+  <Navbar isBordered maxWidth="lg">
+    <NavbarContent as="div" className="!grow-0" justify="start">
       <NavbarBrand>
         <Link className="font-logo text-2xl text-inherit text-primary" to="/">
           songbud
@@ -19,7 +19,7 @@ const Header = () => (
       </NavbarBrand>
       <NavbarItem />
     </NavbarContent>
-    <NavbarContent as="div" justify="center">
+    <NavbarContent as="div" className="max-w-lg grow" justify="center">
       <SearchBar />
     </NavbarContent>
   </Navbar>

@@ -72,7 +72,7 @@ export default tsEslint.config(
       'unicorn/no-null': 'off',
       'unicorn/prevent-abbreviations': [
         'error',
-        { allowList: { El: true, env: true, res: true } },
+        { allowList: { El: true, Props: true, env: true, res: true } },
       ],
     },
   },

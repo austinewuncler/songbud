@@ -1,5 +1,6 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Outlet, createRootRoute } from '@tanstack/react-router';
+import { QueryClient } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { Outlet, createRootRouteWithContext } from '@tanstack/react-router';
 import React, { Suspense, lazy } from 'react';
 import Header from '~/components/Header';
 
@@ -12,18 +13,17 @@ const TanStackRouterDevtools =
       })),
     );
 
-const queryClient = new QueryClient();
-
 const Root = () => (
-  <QueryClientProvider client={queryClient}>
+  <>
     <Header />
     <Outlet />
     <Suspense>
       <TanStackRouterDevtools />
     </Suspense>
-  </QueryClientProvider>
+    <ReactQueryDevtools initialIsOpen={false} />
+  </>
 );
 
-export const Route = createRootRoute({
-  component: Root,
-});
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
+  { component: Root },
+);
