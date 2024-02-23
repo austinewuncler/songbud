@@ -7,6 +7,7 @@ import {
 } from '@nextui-org/react';
 import { Link } from '@tanstack/react-router';
 import React from 'react';
+import ProfileMenu from './ProfileMenu';
 import SearchBar from './SearchBar';
 
 const Header = () => (
@@ -21,6 +22,9 @@ const Header = () => (
     </NavbarContent>
     <NavbarContent as="div" className="max-w-lg grow" justify="center">
       <SearchBar />
+    </NavbarContent>
+    <NavbarContent as="div" className="!grow-0" justify="end">
+      <ProfileMenu />
     </NavbarContent>
   </Navbar>
 );

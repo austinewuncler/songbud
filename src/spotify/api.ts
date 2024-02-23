@@ -7,4 +7,4 @@ export const api = SpotifyApi.withUserAuthorization(
   ['user-read-private', 'user-read-email'],
 );
 
-export const { search, tracks } = api;
+export const { currentUser, search, tracks } = api;
