@@ -1,0 +1,9 @@
+{
+  "experimentalTernaries": true,
+  "plugins": [
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-packagejson",
+    "prettier-plugin-sort-json"
+  ],
+  "singleQuote": true
+}

@@ -1,13 +1,14 @@
 {
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "jsx": "react",
+    "paths": { "~/*": ["./*"] },
+    "types": ["vite/client"]
+  },
   "extends": [
     "@tsconfig/strictest/tsconfig.json",
     "@tsconfig/vite-react/tsconfig.json"
   ],
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": { "~/*": ["./*"] },
-    "types": ["vite/client"]
-  },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
