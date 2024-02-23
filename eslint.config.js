@@ -54,6 +54,7 @@ export default tsEslint.config(
       'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
       'react/jsx-no-bind': ['error', { allowArrowFunctions: true }],
       'react/jsx-no-literals': 'off',
+      'react/jsx-props-no-spreading': 'off',
     },
     settings: { react: { version: 'detect' } },
   },
@@ -72,7 +73,15 @@ export default tsEslint.config(
       'unicorn/no-null': 'off',
       'unicorn/prevent-abbreviations': [
         'error',
-        { allowList: { El: true, Props: true, env: true, res: true } },
+        {
+          allowList: {
+            El: true,
+            Props: true,
+            env: true,
+            props: true,
+            res: true,
+          },
+        },
       ],
     },
   },

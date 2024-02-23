@@ -9,6 +9,7 @@ import { Link } from '@tanstack/react-router';
 import React from 'react';
 import ProfileMenu from './ProfileMenu';
 import SearchBar from './SearchBar';
+import ThemeSwitch from './ThemeSwitch';
 
 const Header = () => (
   <Navbar isBordered maxWidth="lg">
@@ -24,6 +25,7 @@ const Header = () => (
       <SearchBar />
     </NavbarContent>
     <NavbarContent as="div" className="!grow-0" justify="end">
+      <ThemeSwitch />
       <ProfileMenu />
     </NavbarContent>
   </Navbar>
