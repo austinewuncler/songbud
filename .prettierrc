@@ -3,7 +3,8 @@
   "plugins": [
     "prettier-plugin-organize-imports",
     "prettier-plugin-packagejson",
-    "prettier-plugin-sort-json"
+    "prettier-plugin-sort-json",
+    "prettier-plugin-tailwindcss"
   ],
   "singleQuote": true
 }

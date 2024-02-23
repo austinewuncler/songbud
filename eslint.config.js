@@ -23,6 +23,7 @@ export default tsEslint.config(
       ...eslintAllConfig.rules,
       'one-var': ['error', 'never'],
       'sort-imports': 'off',
+      'sort-keys': 'off',
     },
   },
   ...strictTypeChecked,
@@ -31,7 +32,7 @@ export default tsEslint.config(
     files: ['**/*.ts?(x)'],
     languageOptions: { parserOptions: { project: 'tsconfig.?(node.)json' } },
   },
-  { files: ['eslint.config.js'], ...disableTypeChecked },
+  { files: ['*.config.js'], ...disableTypeChecked },
   {
     ...reactAllConfig,
     languageOptions: {
@@ -41,6 +42,7 @@ export default tsEslint.config(
     rules: {
       ...reactAllConfig.rules,
       'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
+      'react/jsx-no-literals': 'off',
     },
     settings: { react: { version: 'detect' } },
   },
@@ -65,6 +67,7 @@ export default tsEslint.config(
     'plugin:optimize-regex/all',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/strict',
+    'plugin:tailwindcss/recommended',
   ),
   {
     ...perfectionistNaturalConfig,
