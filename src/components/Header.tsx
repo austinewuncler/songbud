@@ -6,10 +6,10 @@ import {
   NavbarItem,
 } from '@nextui-org/react';
 import { Link } from '@tanstack/react-router';
-import React from 'react';
+import React, { Suspense } from 'react';
 import ProfileMenu from './ProfileMenu';
-import SearchBar from './SearchBar';
 import ThemeSwitch from './ThemeSwitch';
+import { SearchAutocomplete } from './search-autocomplete';
 
 const Header = () => (
   <Navbar isBordered maxWidth="lg">
@@ -22,7 +22,9 @@ const Header = () => (
       <NavbarItem />
     </NavbarContent>
     <NavbarContent as="div" className="max-w-lg grow" justify="center">
-      <SearchBar />
+      <Suspense>
+        <SearchAutocomplete />
+      </Suspense>
     </NavbarContent>
     <NavbarContent as="div" className="!grow-0" justify="end">
       <ThemeSwitch />

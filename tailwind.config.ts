@@ -12,6 +12,7 @@ export default {
   theme: {
     fontFamily: {
       logo: ['Anta', 'sans-serif'],
+      mono: ['Chivo Mono', 'monospace'],
       sans: ['Poppins', 'sans-serif'],
     },
   },

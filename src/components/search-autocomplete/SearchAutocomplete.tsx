@@ -5,16 +5,15 @@ import React, { useState } from 'react';
 import useSearch from '~/hooks/useSearch';
 import SearchAutocompleteItem from './SearchAutocompleteItem';
 
-const SearchBar = () => {
+const SearchAutocomplete = () => {
   const [query, setQuery] = useState('');
-  const { data, isLoading } = useSearch(query);
+  const tracks = useSearch(query);
   const navigate = useNavigate();
 
   return (
     <Autocomplete
       aria-label="Search"
-      isLoading={isLoading}
-      items={data?.items ?? []}
+      items={tracks}
       menuTrigger="input"
       onInputChange={(value) => {
         setQuery(value);
@@ -47,4 +46,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default SearchAutocomplete;
